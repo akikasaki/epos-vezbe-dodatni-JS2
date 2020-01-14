@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript kalkulator</h2>
+<select id="selection">
+<option value="sabiranje">Sabiranje</option>
+<option value="oduzimanje">Oduzimanje</option>
+<option value="mnozenje">Mnozenje</option>
+<option value="deljenje">Deljenje</option>
+</select>
+
+<form>
+    <label>Prvi broj:</label>  <input type="text" id="polje1"> <br>
+    <label>Drugi broj:</label> <input type="text" id="polje2"> <br>
+    <input type="button" value="Submit" onclick="calculate()"> <br>
+    <p>Rezultat: <span id="result"></span> </p>
+
+</form>
+
+
+<script>
+      function calculate(){
+        var selection = document.getElementById("selection");
+        var selectedStr = selection.options[selection.selectedIndex].value;
+
+        var input1 = parseInt(document.getElementById("polje1").value);
+        var input2 = parseInt(document.getElementById("polje2").value);
+
+
+        var result = 0.0;
+
+        switch(selectedStr){
+            case "sabiranje":
+                result = input1 + input2;
+            break;
+            case "oduzimanje":
+                result = input1 - input2;
+            break;
+            case "mnozenje":
+                result = input1 * input2;
+            break;
+            case "deljenje":
+                result = input1 / input2;
+            break;
+        }
+            document.getElementById("result").innerHTML = result;
+
+    }
+</script>
+  
+</body>
+</html>
